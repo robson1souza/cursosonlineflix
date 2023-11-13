@@ -35,11 +35,8 @@
         // Verifique as credenciais (isso é apenas um exemplo, não é seguro)
         if (username === 'adm' && password === 'adm123') {
           // Credenciais corretas, redirecione para o painel
-          // Importe o script js.js
-          import('./js.js').then(() =>
-            console.log('Redirecionado para o painel')
-          );
-        } else {
+          window.location.href = 'painel.html';
+        } else { 
           // Credenciais incorretas, faça algo aqui
           console.log('Credenciais incorretas');
         }
