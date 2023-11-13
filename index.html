@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Painel de Cursos</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="module" src="./src/index.js"></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <!-- Adicione isso dentro da div com a classe "login-container" -->
+      <form class="login-form" onsubmit="login(event)">
+        <input
+          type="text"
+          id="username"
+          placeholder="Nome de usuário"
+          required
+        />
+        <input type="password" id="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+
+    <!-- Adicione isso no final do corpo do arquivo, antes do fechamento da tag </body> -->
+    <script src="cookies.js"></script>
+    <script>
+      function login(event) {
+        event.preventDefault();
+
+        // Obtenha os valores de usuário e senha
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Verifique as credenciais (isso é apenas um exemplo, não é seguro)
+        if (username === 'adm' && password === 'adm123') {
+          // Credenciais corretas, redirecione para o painel
+          // Importe o script js.js
+          import('./js.js').then(() =>
+            console.log('Redirecionado para o painel')
+          );
+        } else {
+          // Credenciais incorretas, faça algo aqui
+          console.log('Credenciais incorretas');
+        }
+      }
+    </script>
+  </body>
+</html>
