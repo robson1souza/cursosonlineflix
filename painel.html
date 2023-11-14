@@ -103,6 +103,29 @@
     </div>
     <script src="cookies.js"></script>
     <script>
+  // Verifica se já existe uma flag indicando que o usuário fez login
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+  // Se já estiver logado, redireciona para o painel
+  if (isLoggedIn) {
+    window.location.href = 'painel.html';
+  }
+
+  // Função para processar o login
+  function processLogin() {
+    // Lógica de verificação do usuário e senha
+    // ...
+
+    // Se as credenciais estiverem corretas, marca como logado e redireciona para o painel
+    if (username === 'adm' && password === 'adm123') {
+      localStorage.setItem('isLoggedIn', 'true');
+      window.location.href = 'painel.html';
+    } else {
+      alert('Credenciais inválidas');
+    }
+  }
+</script>
+    <script>
       function redirectToCourse(url) {
         window.location.href = url;
       }
