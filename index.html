@@ -36,7 +36,7 @@ function processLogin() {
   if (username === 'adm' && password === 'adm123') {
     // Marca como logado e redireciona para o painel
     localStorage.setItem('isLoggedIn', 'true');
-    window.location.href = 'painel.html';
+    window.location.href = 'https://painel-nu.vercel.app/';
     // Retorna false para evitar o envio do formulário
     return false;
   } else {
