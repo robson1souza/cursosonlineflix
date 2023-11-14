@@ -10,7 +10,9 @@
     <div class="login-container">
       <h2>Login</h2>
       <!-- Adicione isso dentro da div com a classe "login-container" -->
-      <form class="login-form" onsubmit="login(event)">
+      <form class="login-form" onsubmit="return processLogin()">
+</form>
+
         <input
           type="text"
           id="username"
