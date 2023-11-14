@@ -30,7 +30,7 @@
 
   // Se já estiver logado, redireciona para o painel
   if (isLoggedIn) {
-    window.location.href = 'painel.html';
+    window.location.href = 'https://painel-nu.vercel.app/';
   }
 
   // Função para processar o login
@@ -41,7 +41,7 @@
     // Se as credenciais estiverem corretas, marca como logado e redireciona para o painel
     if (username === 'adm' && password === 'adm123') {
       localStorage.setItem('isLoggedIn', 'true');
-      window.location.href = 'painel.html';
+      window.location.href = 'https://painel-nu.vercel.app/';
     } else {
       alert('Credenciais inválidas');
     }
