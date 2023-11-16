@@ -10,9 +10,7 @@
     <div class="login-container">
       <h2>Login</h2>
       <!-- Adicione isso dentro da div com a classe "login-container" -->
-      <form class="login-form" onsubmit="return processLogin()">
-</form>
-
+      <form class="login-form" onsubmit="login(event)">
         <input
           type="text"
           id="username"
@@ -26,26 +24,26 @@
 
     <!-- Adicione isso no final do corpo do arquivo, antes do fechamento da tag </body> -->
     <script src="cookies.js"></script>
-   <script>
- // Adicione esta função ao seu código
-function processLogin() {
-  // Lógica de verificação do usuário e senha
-  // ...
+    <script>
+      function login(event) {
+        event.preventDefault();
 
-  // Se as credenciais estiverem corretas, redireciona para o painel
-  if (username === 'adm' && password === 'adm123') {
-    // Marca como logado e redireciona para o painel
-    localStorage.setItem('isLoggedIn', 'true');
-    window.location.href = 'https://painel-nu.vercel.app/';
-    // Retorna false para evitar o envio do formulário
-    return false;
-  } else {
-    alert('Credenciais inválidas');
-    // Retorna true para permitir o envio do formulário
-    return true;
-  }
-}
+        // Obtenha os valores de usuário e senha
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
 
-</script>
+        // Verifique as credenciais (isso é apenas um exemplo, não é seguro)
+        if (username === 'adm' && password === 'adm123') {
+          // Credenciais corretas, redirecione para o painel
+          // Importe o script js.js
+          import('./js.js').then(() =>
+            console.log('Redirecionado para o painel')
+          );
+        } else {
+          // Credenciais incorretas, faça algo aqui
+          console.log('Credenciais incorretas');
+        }
+      }
+    </script>
   </body>
 </html>
