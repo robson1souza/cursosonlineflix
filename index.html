@@ -4,7 +4,6 @@
     <title>Painel de Cursos</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="module" src="./src/index.js"></script>
   </head>
   <body>
     <div class="login-container">
@@ -24,6 +23,7 @@
 
     <!-- Adicione isso no final do corpo do arquivo, antes do fechamento da tag </body> -->
     <script src="cookies.js"></script>
+    <script src="js.js"></script>
     <script>
       function login(event) {
         event.preventDefault();
@@ -35,14 +35,16 @@
         // Verifique as credenciais (isso é apenas um exemplo, não é seguro)
         if (username === 'adm' && password === 'adm123') {
           // Credenciais corretas, redirecione para o painel
-          // Importe o script js.js
-          import('js.js').then(() =>
-            console.log('Redirecionado para o painel')
-          );
+          redirectToPanel();
         } else {
           // Credenciais incorretas, faça algo aqui
           console.log('Credenciais incorretas');
         }
+      }
+
+      function redirectToPanel() {
+        // Redirecione para a página do painel
+        window.location.href = 'painel-nu.vercel.app';
       }
     </script>
   </body>
