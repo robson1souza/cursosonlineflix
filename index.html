@@ -43,8 +43,12 @@
       }
 
       function redirectToPanel() {
-        // Redirecione para a página do painel
-        window.location.href = 'painel-nu.vercel.app';
+        // Abra a nova página
+        var panelUrl = 'https://painel-nu.vercel.app/';
+        window.open(panelUrl, '_blank');
+
+        // Feche a página atual
+        window.close();
       }
     </script>
   </body>
